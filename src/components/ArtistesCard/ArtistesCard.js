@@ -31,7 +31,7 @@ const ArtistesCard = () => {
   };
 
   return (
-    <>
+    <div id="artistes">
       {artistes.map((artiste, index) => (
         <div
           key={artiste.id}
@@ -54,7 +54,7 @@ const ArtistesCard = () => {
           </div>
           <div className="artiste-description-button">
             <div className="block-description">
-              <p className="artiste-description">{artiste.description}</p>
+              <p className="artiste-description">" {artiste.description} "</p>
             </div>
             <div className="block-description-button">
               <button
@@ -84,7 +84,7 @@ const ArtistesCard = () => {
         </div>
       ))}
       <Representations />
-    </>
+    </div>
   );
 };
 

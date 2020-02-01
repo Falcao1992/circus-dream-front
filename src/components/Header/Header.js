@@ -8,6 +8,13 @@ class Header extends React.Component {
       <>
         <Burger />
         <div className="header__content">
+          <div className="presentation__content">
+            <h1 className="titre-presentation">Circus Dream</h1>
+            <p className="texte-presentation">
+              bienvenue au circus dream, le cirque qui va vous emerveiller par
+              tout ses artistes !!!
+            </p>
+          </div>
         </div>
       </>
     );

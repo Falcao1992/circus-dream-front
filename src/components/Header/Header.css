@@ -3,3 +3,24 @@
     background-image: url('./img/backgroundHeader.jpg');
     background-size: cover;
 }
+
+.presentation__content {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 50vh;
+}
+
+.titre-presentation {
+    display: inline-block;
+    text-align: right;
+    padding: 9px 20px;
+    color: red;
+    width: 100%;
+}
+
+.texte-presentation {
+    color: white;
+    padding: 15px;
+    text-align: center;
+}

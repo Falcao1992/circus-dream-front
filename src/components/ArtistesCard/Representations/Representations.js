@@ -21,21 +21,20 @@ const Representations = () => {
 
   return (
     <>
-      <div className="representations__content">
+      <div className="representations__content" id="representations">
         {representations.map(representation => (
           <div key={representation.id} className="representation__card">
             <h3 className="representation-ville">
               {representation.city.toUpperCase()}
             </h3>
             <p className="representation-date">
-              {moment(representation.date).format("[le ]dddd Do MMMM")}
+              {`${moment(representation.date).format("[le ]dddd Do MMMM")} à ${representation.hours}H00`}
             </p>
             <div className="block-ticket-price">
               <p className="representation-price">
                 {representation.ticket_price}€
               </p>
-              <p className="representation-ticket">{`${representation.ticket_available -
-                representation.ticket_sold} billet restants`}</p>
+              <p className="representation-ticket">{`${representation.capacity - representation.ticket_sold} billets restants`}</p>
             </div>
             <button className="representation-button" type="button">
               reserver

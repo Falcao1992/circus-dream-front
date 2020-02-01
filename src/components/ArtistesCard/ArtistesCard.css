@@ -8,15 +8,18 @@
 
 .block_img-name-author{
   display: flex;
+  flex-direction: column;
 }
 
 .artiste-picture{
-  max-width: 40%;
+  max-height: 100%;
+  max-width: 100%;
 }
 
-.block_name-author{
-  align-self: center;
-  padding: 0 15px;
+.block_name-author {
+  margin: 15px 0;
+  padding-bottom: 11px;
+  border-bottom: 2px solid red;
 }
 
 .artiste-description {
