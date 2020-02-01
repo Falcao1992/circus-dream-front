@@ -1,0 +1,45 @@
+.artisteCard__content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: lightgrey;
+  padding: 30px 20px;
+}
+
+.block_img-name-author{
+  display: flex;
+}
+
+.artiste-picture{
+  max-width: 40%;
+}
+
+.block_name-author{
+  align-self: center;
+  padding: 0 15px;
+}
+
+.artiste-description {
+  margin: 20px 0;
+}
+
+.artisteCard__content_notVisible {
+  display: none;
+}
+
+.buttonInvisible {
+  display: none;
+}
+
+.block-description-button {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttonNextVisible {
+  display: block;
+}
+
+.buttonPreviousVisible {
+  display: block;
+}

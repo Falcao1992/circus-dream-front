@@ -1,0 +1,5 @@
+.header__content{
+    height: 50vh;
+    background-image: url('./img/backgroundHeader.jpg');
+    background-size: cover;
+}

@@ -1,0 +1,16 @@
+.representations__content {
+    background-color: lightcyan;
+    display: flex;
+    flex-direction: column;
+}
+
+.representation__card{
+    background-color: lightpink;
+    padding: 20px;
+}
+
+.block-ticket-price {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}

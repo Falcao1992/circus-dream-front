@@ -1,24 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header/Header';
+import ArtistesCard from './components/ArtistesCard/ArtistesCard';
+import Reservation from './components/Reservation/Reservation';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <div className="presentation__content">
+        <h1 className="titre-presentation">presentation</h1>
+        <p className="texte-presentation">bienvenue au circus dream, le cirque qui va vous emerveiller par tout ses artistes !!!</p>
+      </div>
+      <ArtistesCard />
+      <Reservation />
     </div>
   );
 }
