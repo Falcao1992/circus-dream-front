@@ -45,11 +45,20 @@ const ArtistesCard = () => {
           }
         >
           <div className="block_img-name-author">
+
+            <div className="block-images">
             <img
               src={artiste.picture}
               className="artiste-picture"
               alt="artiste"
-            ></img>
+            />
+            <img
+              src={artistes.length > index + 1 ? artistes[index + 1].picture : "#"}
+              className="artiste-picture2"
+              alt="artiste"
+            />
+            </div>
+            
             <div className="block_name-author">
               <h2 className="artiste-name">{artiste.name}</h2>
               <p className="artiste-author">{artiste.author}</p>

@@ -28,7 +28,7 @@
 }
 
 .reservation__form-block-select {
-    margin: 13px 0;
+    margin: 15px 0;
 }
 
 .reservation__form-select-label{
@@ -36,9 +36,22 @@
 }
 
 .form__item{
-    margin: 13px 10px;
+    margin: 15px 10px;
 }
 .form__item-range {
     transform: translate(15px, 7px);
     margin-bottom: 30px;
 }
+
+.form__button {
+    margin: 25px 0;
+}
+
+@media (min-width: 780px) {
+    .reservation__form label {
+        margin: auto;
+      }
+     .reservation__form-block-select {
+         margin: auto;
+     } 
+  }

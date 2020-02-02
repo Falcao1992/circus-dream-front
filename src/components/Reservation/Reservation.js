@@ -57,7 +57,6 @@ const Reservation = () => {
 
   const submitFormulaire = e => {
     e.preventDefault();
-    const data = new FormData(e.target);
     axios
       .post("http://localhost:5000/api/v1/reservations/", {
         name: inputName,
@@ -171,7 +170,7 @@ const Reservation = () => {
           />
         </label>
 
-        <button type="submit">envoyer</button>
+        <button className="form__button" type="submit">Envoyer</button>
       </form>
     </div>
   );

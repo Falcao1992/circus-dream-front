@@ -1,9 +1,7 @@
 .header__content{
     height: 40vh;
-    background-image: url('./img/backgroundHeader.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.75), rgba(28, 28, 28, 0.3)), url('./img/backgroundHeader.png') no-repeat center center / cover
+    
 }
 
 .presentation__content {
@@ -19,11 +17,21 @@
     padding: 9px 20px;
     color: #fbfbfd;
     width: 100%;
+    text-shadow: 3px 5px 2px #474747;
 
 }
 
 .texte-presentation {
     padding: 15px;
-    color: #86868b;
+    color: #e4e4e7e0;
     text-align: center;
 }
+
+@media (min-width: 850px) {
+    .header__content {
+        height: 50vh;
+        background-repeat: repeat;
+        background-size: contain;
+      }
+}
+

@@ -1,14 +1,14 @@
-.artiste__block-titre{
+.artiste__block-titre {
   display: flex;
   flex-direction: column;
 }
 
 .artiste__titre {
   text-align: center;
-    background-color: #1d1d1f;
-    color: #fbfbfd ;
-    padding: 25px 20px;
-    letter-spacing: 2px;
+  background-color: #1d1d1f;
+  color: #fbfbfd;
+  padding: 25px 20px;
+  letter-spacing: 2px;
 }
 
 .artisteCard__content {
@@ -19,20 +19,28 @@
   padding: 30px 20px;
 }
 
-.block_img-name-author{
+.block_img-name-author {
   display: flex;
   flex-direction: column;
 }
 
-.artiste-picture{
+.artiste-picture {
   max-height: 100%;
   max-width: 100%;
+}
+
+.artiste-picture2 {
+  display: none;
 }
 
 .block_name-author {
   margin: 15px 0;
   padding-bottom: 11px;
   border-bottom: 2px solid red;
+}
+
+.artiste-name {
+  padding-bottom: 10px;
 }
 
 .artiste-description {
@@ -58,4 +66,41 @@
 
 .buttonPreviousVisible {
   display: block;
+}
+
+@media (min-width: 780px) {
+  .artiste-picture {
+    max-width: 40%;
+    max-height: 399px;
+    align-self: center;
+  }
+  .artiste-picture2 {
+    display: inline-block;
+    align-self: center;
+    max-width: 40%;
+    max-height: 399px;
+  }
+
+  .block-images {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .block_name-author {
+    margin: 15px 80px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    border-bottom: 2px solid red;
+  }
+
+  .artiste-description {
+    padding: 0px 80px;
+  }
+
+  .block-description-button {
+    margin: 10px 70px;
+  }
+  .representation__card {
+    padding: 40px 100px !important
+  }
 }
