@@ -16,6 +16,7 @@ const Reservation = () => {
     setCurrentRepresentationTicketSold
   ] = useState(0);
   const [representations, setRepresentations] = useState([]);
+  const [ changeSelect, setChangeSelect ] = useState(false)
 
   useEffect(() => {
     checkInputCity();
@@ -46,6 +47,8 @@ const Reservation = () => {
   const addDate = () => {
     const dateMatch = representations.find( representation => representation.city === inputCity);
     const dateMatchFormat = (moment(dateMatch.date).format('YYYY[-]MM[-]Do'))
+    setChangeSelect(false)
+    setInputDateReservation(dateMatchFormat)
     return moment(dateMatch.date).format(dateMatchFormat)
   }
 
@@ -102,12 +105,13 @@ const Reservation = () => {
 
           <select
             value={inputCity}
-            onChange={e => setInputCity(e.target.value)}
+            onChange={e => setInputCity(e.target.value) || setChangeSelect(true)}
             name="city"
             id="city-select"
           >
             <option value=""> Choississez votre ville</option>
             {representations.map(representation => (
+              
               <option key={representation.id} value={representation.city}>{representation.city}</option>
             ))}
           </select>
@@ -138,7 +142,7 @@ const Reservation = () => {
         <label htmlFor="dateReservation">
           Date:
           <input
-            value={inputCity ? addDate() : inputDateReservation}
+            value={inputCity && changeSelect ? addDate() : inputDateReservation}
             onChange={e => setInputDateReservation(e.target.value)}
             name="date"
             type="date"
@@ -151,7 +155,7 @@ const Reservation = () => {
           Nb de personnes: &nbsp; {inputNombresPersonne} &nbsp;
           <input
             value={inputNombresPersonne}
-            onChange={e => setInputNombresPersonne(parseInt(e.target.value))}
+            onChange={e => setInputNombresPersonne(e.target.value)}
             name="number_ticket"
             type="range"
             min="1"
