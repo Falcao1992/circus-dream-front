@@ -16,7 +16,7 @@ const Reservation = () => {
     setCurrentRepresentationTicketSold
   ] = useState(0);
   const [representations, setRepresentations] = useState([]);
-  const [ changeSelect, setChangeSelect ] = useState(false)
+  const [changeSelect, setChangeSelect] = useState(false);
 
   useEffect(() => {
     checkInputCity();
@@ -27,7 +27,7 @@ const Reservation = () => {
       setRepresentations(result.data);
     };
     fetchCityRepresentations();
-  }, []);
+  }, [inputCity]);
 
   const checkInputCity = () => {
     if (inputCity) {
@@ -37,20 +37,23 @@ const Reservation = () => {
         );
         setCurrentRepresentationTicketSold(result.data[0].ticket_sold);
         console.log(currentRepresentationTicketSold);
+        console.log("dans le if");
       };
       fetchRepresentations();
     } else {
-      console.log("pas dans le else");
+      console.log("dans le else");
     }
   };
 
   const addDate = () => {
-    const dateMatch = representations.find( representation => representation.city === inputCity);
-    const dateMatchFormat = (moment(dateMatch.date).format('YYYY[-]MM[-]Do'))
-    setChangeSelect(false)
-    setInputDateReservation(dateMatchFormat)
-    return moment(dateMatch.date).format(dateMatchFormat)
-  }
+    const dateMatch = representations.find(
+      representation => representation.city === inputCity
+    );
+    const dateMatchFormat = moment(dateMatch.date).format("YYYY[-]MM[-]Do");
+    setChangeSelect(false);
+    setInputDateReservation(dateMatchFormat);
+    return moment(dateMatch.date).format(dateMatchFormat);
+  };
 
   const submitFormulaire = e => {
     e.preventDefault();
@@ -69,7 +72,8 @@ const Reservation = () => {
           `http://localhost:5000/api/v1/representations/${inputCity.toUpperCase()}`,
           {
             ticket_sold: currentRepresentationTicketSold + inputNombresPersonne
-          }
+          },
+          console.log(req)
         );
       });
   };
@@ -105,14 +109,17 @@ const Reservation = () => {
 
           <select
             value={inputCity}
-            onChange={e => setInputCity(e.target.value) || setChangeSelect(true)}
+            onChange={e =>
+              setInputCity(e.target.value) || setChangeSelect(true)
+            }
             name="city"
             id="city-select"
           >
             <option value=""> Choississez votre ville</option>
             {representations.map(representation => (
-              
-              <option key={representation.id} value={representation.city}>{representation.city}</option>
+              <option key={representation.id} value={representation.city}>
+                {representation.city}
+              </option>
             ))}
           </select>
         </div>
@@ -155,7 +162,7 @@ const Reservation = () => {
           Nb de personnes: &nbsp; {inputNombresPersonne} &nbsp;
           <input
             value={inputNombresPersonne}
-            onChange={e => setInputNombresPersonne(e.target.value)}
+            onChange={e => setInputNombresPersonne(parseInt(e.target.value))}
             name="number_ticket"
             type="range"
             min="1"
