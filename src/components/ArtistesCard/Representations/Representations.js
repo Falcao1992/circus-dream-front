@@ -14,7 +14,6 @@ const Representations = () => {
         "http://localhost:5000/api/v1/representations"
       );
       setRepresentations(result.data);
-      console.log(representations);
     };
     fetchRepresentations();
   }, []);

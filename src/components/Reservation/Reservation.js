@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import moment from "moment";
 
 import "./Reservation.css";
 
@@ -14,12 +15,18 @@ const Reservation = () => {
     currentRepresentationTicketSold,
     setCurrentRepresentationTicketSold
   ] = useState(0);
-
-  const [test, setTest] = useState(false);
+  const [representations, setRepresentations] = useState([]);
 
   useEffect(() => {
     checkInputCity();
-  });
+    const fetchCityRepresentations = async () => {
+      const result = await axios.get(
+        "http://localhost:5000/api/v1/representations"
+      );
+      setRepresentations(result.data);
+    };
+    fetchCityRepresentations();
+  }, []);
 
   const checkInputCity = () => {
     if (inputCity) {
@@ -35,6 +42,12 @@ const Reservation = () => {
       console.log("pas dans le else");
     }
   };
+
+  const addDate = () => {
+    const dateMatch = representations.find( representation => representation.city === inputCity);
+    const dateMatchFormat = (moment(dateMatch.date).format('YYYY[-]MM[-]Do'))
+    return moment(dateMatch.date).format(dateMatchFormat)
+  }
 
   const submitFormulaire = e => {
     e.preventDefault();
@@ -61,9 +74,7 @@ const Reservation = () => {
   return (
     <div className="reservation__content">
       <div className="reservation__block-titre">
-        <h1 className="reservation__titre">
-            Reserver
-        </h1>
+        <h1 className="reservation__titre">Reserver</h1>
       </div>
       <form
         encType="multipart/formdata"
@@ -82,18 +93,24 @@ const Reservation = () => {
           />
         </label>
         <div className="reservation__form-block-select">
-        <label htmlFor="city-select" className="reservation__form-select-label">Ville:</label>
-        <select
-          value={inputCity}
-          onChange={e => setInputCity(e.target.value)}
-          name="city"
-          id="city-select"
-        >
-          <option value=""> Choississez votre ville</option>
-          <option value="TOURS">TOURS</option>
-          <option value="LA ROCHE SUR YON">LA ROCHE SUR YON</option>
-        </select>
+          <label
+            htmlFor="city-select"
+            className="reservation__form-select-label"
+          >
+            Ville:
+          </label>
 
+          <select
+            value={inputCity}
+            onChange={e => setInputCity(e.target.value)}
+            name="city"
+            id="city-select"
+          >
+            <option value=""> Choississez votre ville</option>
+            {representations.map(representation => (
+              <option key={representation.id} value={representation.city}>{representation.city}</option>
+            ))}
+          </select>
         </div>
 
         <label htmlFor="email">
@@ -121,11 +138,12 @@ const Reservation = () => {
         <label htmlFor="dateReservation">
           Date:
           <input
-            value={inputDateReservation}
+            value={inputCity ? addDate() : inputDateReservation}
             onChange={e => setInputDateReservation(e.target.value)}
             name="date"
             type="date"
             className="form__item"
+            disabled={true}
           />
         </label>
 
