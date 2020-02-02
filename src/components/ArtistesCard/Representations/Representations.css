@@ -6,11 +6,17 @@
 
 .representation__card{
     background-color: rgb(214, 197, 199);
-    padding: 20px;
+    padding: 25px 20px;
+    margin-top: 10px;
+}
+
+.representation-date {
+    margin-top: 5px;
+    margin-bottom: 25px;
 }
 
 .block-ticket-price {
     display: flex;
     justify-content: space-between;
-    margin: 10px 0;
+    margin: 25px 0;
 }

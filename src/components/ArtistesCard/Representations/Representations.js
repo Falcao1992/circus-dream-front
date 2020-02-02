@@ -28,13 +28,15 @@ const Representations = () => {
               {representation.city.toUpperCase()}
             </h3>
             <p className="representation-date">
-              {`${moment(representation.date).format("[le ]dddd Do MMMM")} à ${representation.hours}H00`}
+              {`${moment(representation.date).format("[le ]dddd Do MMMM")} à ${
+                representation.hours
+              }H00`}
             </p>
             <div className="block-ticket-price">
               <p className="representation-price">
                 {representation.ticket_price}€
               </p>
-              <p className="representation-ticket">{`${representation.capacity - representation.ticket_sold} billets restants`}</p>
+              <p className="representation-ticket">{` déja ${representation.ticket_sold} billets vendu sur ${representation.capacity}`}</p>
             </div>
             <button className="representation-button" type="button">
               reserver

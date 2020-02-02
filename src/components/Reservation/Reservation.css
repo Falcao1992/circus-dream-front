@@ -1,3 +1,23 @@
 .reservation__content {
     height: 50vh;
+    display: flex;
+}
+
+.reservation__form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 25px;
+}
+
+.reservation__form label{
+    padding-left: 20px;
+}
+
+.form__item{
+    margin: 13px 10px;
+}
+.form__item-range {
+    transform: translate(15px, 7px);
+    margin-bottom: 30px;
 }
