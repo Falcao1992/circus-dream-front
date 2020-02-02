@@ -1,18 +1,19 @@
-
 button {
-    display: block;
-    padding: 8px;
-    background-color: white;
-    color: red;
-    border: 1px solid white;
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    background: white;
-    transition-property: all;
-    transition-duration: 0.3s;
+  display: block;
+  padding: 8px;
+  color: #06c;
+  border: 1px transparent ;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  transition-property: all;
+  transition-duration: 0.3s;
+  background-color: transparent !important;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 600;
 }
 
 button:hover {
-  color: white;
-  background-color: red;
+  text-decoration: underline;
 }
+
 

@@ -22,13 +22,16 @@ const Representations = () => {
   return (
     <>
       <div className="representations__content" id="representations">
+        <div className="representations__block-titre">
+          <h1 className="representations__titre">Les dates de Représentation</h1>
+        </div>
         {representations.map(representation => (
           <div key={representation.id} className="representation__card">
             <h3 className="representation-ville">
               {representation.city.toUpperCase()}
             </h3>
             <p className="representation-date">
-              {`${moment(representation.date).format("[le ]dddd Do MMMM")} à ${
+              {`${moment(representation.date).format("[Le ]dddd Do MMMM")} à ${
                 representation.hours
               }H00`}
             </p>
@@ -36,10 +39,10 @@ const Representations = () => {
               <p className="representation-price">
                 {representation.ticket_price}€
               </p>
-              <p className="representation-ticket">{` déja ${representation.ticket_sold} billets vendu sur ${representation.capacity}`}</p>
+              <p className="representation-ticket">{` Déja ${representation.ticket_sold} billets vendu sur ${representation.capacity}`}</p>
             </div>
             <button className="representation-button" type="button">
-              reserver
+              Réserver
             </button>
           </div>
         ))}

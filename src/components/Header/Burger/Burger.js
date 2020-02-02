@@ -11,16 +11,16 @@ class Burger extends React.Component {
     return (
       <Menu>
         <a className="menu-item" href="#">
-          cirque
+          Le Cirque
         </a>
         <a className="menu-item" href="#artistes">
-          artistes
+          Les Artistes
         </a>
         <a className="menu-item" href="#representations">
-          representations
+          Les Representations
         </a>
         <a className="menu-item" href="#">
-          contact
+          Résever
         </a>
       </Menu>
     );

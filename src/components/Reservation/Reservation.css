@@ -1,17 +1,38 @@
-.reservation__content {
-    height: 50vh;
+
+.reservation__block-titre {
+    background-color: #fff;
     display: flex;
+    flex-direction: column;
+    
+}
+
+.reservation__titre {
+    text-align: center;
+    background-color: #1d1d1f;
+    color: #fbfbfd ;
+    padding: 25px 20px;
+    letter-spacing: 2px;
+    margin-bottom: 0px;
 }
 
 .reservation__form {
     display: flex;
     flex-direction: column;
     width: 100%;
+    border-top: 2px solid #1d1d1f;
     padding-top: 25px;
 }
 
 .reservation__form label{
     padding-left: 20px;
+}
+
+.reservation__form-block-select {
+    margin: 13px 0;
+}
+
+.reservation__form-select-label{
+    padding-right: 10px;
 }
 
 .form__item{

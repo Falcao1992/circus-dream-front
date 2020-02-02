@@ -1,18 +1,37 @@
 .representations__content {
-    background-color: lightcyan;
+    background-color: #fff;
     display: flex;
     flex-direction: column;
 }
 
-.representation__card{
-    background-color: rgb(214, 197, 199);
+.representations__titre {
+    text-align: center;
+    background-color: #1d1d1f;
+    color: #fbfbfd ;
     padding: 25px 20px;
-    margin-top: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 0;
 }
 
+.representation__card:nth-child(1n){
+    background-color: #1d1d1f;
+    color: #fbfbfd ;
+    padding: 35px 20px;
+}
+.representation__card:nth-child(2n){
+    background-color: #fbfbfd;
+    color: #1d1d1f;
+    padding: 35px 20px;
+}
+
+
 .representation-date {
-    margin-top: 5px;
-    margin-bottom: 25px;
+    margin-top: 10px;
+    margin-bottom: 35px;
+    color: #79797e;
+}
+.representation-button {
+    padding: 8px 0;
 }
 
 .block-ticket-price {
@@ -20,3 +39,4 @@
     justify-content: space-between;
     margin: 25px 0;
 }
+

@@ -60,6 +60,11 @@ const Reservation = () => {
 
   return (
     <div className="reservation__content">
+      <div className="reservation__block-titre">
+        <h1 className="reservation__titre">
+            Reserver
+        </h1>
+      </div>
       <form
         encType="multipart/formdata"
         className="reservation__form"
@@ -72,11 +77,12 @@ const Reservation = () => {
             onChange={e => setInputName(e.target.value)}
             name="name"
             type="text"
-            placeholder="Nom"
+            placeholder=" Nom"
             className="form__item"
           />
         </label>
-        <label htmlFor="city-select">Ville:</label>
+        <div className="reservation__form-block-select">
+        <label htmlFor="city-select" className="reservation__form-select-label">Ville:</label>
         <select
           value={inputCity}
           onChange={e => setInputCity(e.target.value)}
@@ -88,6 +94,8 @@ const Reservation = () => {
           <option value="LA ROCHE SUR YON">LA ROCHE SUR YON</option>
         </select>
 
+        </div>
+
         <label htmlFor="email">
           Email:
           <input
@@ -95,7 +103,7 @@ const Reservation = () => {
             onChange={e => setInputEmail(e.target.value)}
             name="email"
             type="email"
-            placeholder="Email"
+            placeholder=" Email"
             className="form__item"
           />
         </label>
@@ -106,7 +114,7 @@ const Reservation = () => {
             onChange={e => setInputPhoneNumber(e.target.value)}
             name="phone_number"
             type="number"
-            placeholder="phoneNumber"
+            placeholder=" 02 XX XX XX XX"
             className="form__item"
           />
         </label>

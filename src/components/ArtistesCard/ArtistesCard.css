@@ -1,8 +1,21 @@
+.artiste__block-titre{
+  display: flex;
+  flex-direction: column;
+}
+
+.artiste__titre {
+  text-align: center;
+    background-color: #1d1d1f;
+    color: #fbfbfd ;
+    padding: 25px 20px;
+    letter-spacing: 2px;
+}
+
 .artisteCard__content {
   width: 100%;
   display: flex;
   flex-direction: column;
-  background-color: lightgrey;
+  background-color: #fbfbfd;
   padding: 30px 20px;
 }
 

@@ -32,6 +32,10 @@ const ArtistesCard = () => {
 
   return (
     <div id="artistes">
+      <div className="artiste__block-titre">
+        <h1 className="artiste__titre">Nos Artistes</h1>
+
+      </div>
       {artistes.map((artiste, index) => (
         <div
           key={artiste.id}
@@ -66,7 +70,7 @@ const ArtistesCard = () => {
                 }
                 onClick={previousArtistes}
               >
-                previous
+{"< "}Précédent
               </button>
               <button
                 type="button"
@@ -77,7 +81,7 @@ const ArtistesCard = () => {
                 }
                 onClick={nextArtistes}
               >
-                next
+                Suivant >
               </button>
             </div>
           </div>

@@ -9,12 +9,12 @@
   
   /* Color/shape of burger icon bars */
   .bm-burger-bars {
-    background: rgb(235, 11, 11);
+    background: #fff;
   }
   
   /* Color/shape of burger icon bars on hover*/
   .bm-burger-bars-hover {
-    background: #a90000;
+    background: #fff;
   }
   
   /* Position and sizing of clickable cross button */
@@ -53,7 +53,10 @@
   
   /* Wrapper for item list */
   .bm-item-list {
-    color: #665e09;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     padding: 0.8em;
   }
   
@@ -64,23 +67,22 @@
   
   /* Styling of overlay */
   .bm-overlay {
-    background: rgba(255, 255, 255, 0.89);
+    background: #ffffff;
   }
 
   .menu-item {
     text-decoration: none;
-    color: rgb(0, 0, 0);
-    font-weight: 700;
-    font-size: 1.5em;
-    padding: 20px;
-    text-align: center;
+    color: #1d1d1f;
+    font-weight: 600;
+    padding: 10px 0;
     margin: 5px;
-  }
+    width: 101%;
+    border-bottom: 1px solid;
+}
 
   .menu-item:hover{
     text-decoration: underline;
-    text-decoration-color: red;
   }
   .menu-item:focus{
-    outline-color: red;
+    outline-color: #fff;
   }

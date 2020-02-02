@@ -1,26 +1,29 @@
 .header__content{
-    height: 50vh;
-    background-image: url('./img/backgroundHeader.jpg');
+    height: 40vh;
+    background-image: url('./img/backgroundHeader.png');
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .presentation__content {
     display: flex;
-    justify-content: space-between;
     flex-direction: column;
-    height: 50vh;
+    padding-top: 15vh;
 }
 
 .titre-presentation {
     display: inline-block;
-    text-align: right;
+    text-align: center;
+    margin: auto;
     padding: 9px 20px;
-    color: red;
+    color: #fbfbfd;
     width: 100%;
+
 }
 
 .texte-presentation {
-    color: white;
     padding: 15px;
+    color: #86868b;
     text-align: center;
 }
