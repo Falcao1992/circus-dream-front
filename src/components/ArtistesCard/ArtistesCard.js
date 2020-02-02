@@ -53,7 +53,7 @@ const ArtistesCard = () => {
               alt="artiste"
             />
             <img
-              src={artistes.length > index + 1 ? artistes[index + 1].picture : "#"}
+              src={artistes.length > index + 1 ? artistes[index + 1].picture : artistes[index - artistes.length + 1].picture}
               className="artiste-picture2"
               alt="artiste"
             />
